@@ -51,6 +51,7 @@ Route::prefix('admin')->group(function(){
     Route::post('password/reset', 'Admin\AdminResetPasswordController@reset');
 
     Route::get('/services', 'Admin\AdminController@services')->name('admin.services');
+    Route::post('/service', 'Admin\AdminController@servicesPost')->name('admin.service');
 
 });
 

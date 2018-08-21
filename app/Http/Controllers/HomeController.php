@@ -25,9 +25,9 @@ class HomeController extends Controller
     public function index()
     {
         if( Auth::user()->role === 0){
-            return view('home');
+            return view('pages.home');
         }else{
-            return view('t');
+            return view('pages.servise');
         }
 
     }

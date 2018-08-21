@@ -23,7 +23,7 @@ class AdminRegisterController extends Controller
     |
     */
 
-//    use RegistersUsers;
+//   use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -60,7 +60,6 @@ class AdminRegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => 'required|string|max:255',
-            'role' => 'required|string|max:20',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
@@ -74,10 +73,11 @@ class AdminRegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return Admin::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'role' => $data['role'],
+            'remember_token' => $data['_token'],
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -91,7 +91,7 @@ class AdminRegisterController extends Controller
         $this->guard()->login($user);
 
         return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+            ?: redirect('/admin/home');
     }
 
     protected function registered(Request $request, $user)

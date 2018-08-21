@@ -27,4 +27,31 @@ class AdminController extends Controller
 
         return view('admin.home');
     }
+
+    public function services()
+    {
+
+        return view('admin.servise');
+    }
+
+    public function servicesPost(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|min:6|max:20',
+            'desc' => 'required|max:255',
+            'link' => 'required|max:20',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $name = $request['name'];
+        $desc= $request['desc'];
+        $link = $request['link'];
+
+        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+        $request->image->move(public_path('images/services/'), $imageName);
+
+
+
+
+    }
 }
