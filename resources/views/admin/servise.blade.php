@@ -8,7 +8,7 @@
                     <div class="panel-heading">Service</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('admin.service') }}">
+                        <form class="form-horizontal" method="POST" action="{{ route('admin.service') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -70,7 +70,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        Register
+                                        Save
                                     </button>
                                 </div>
                             </div>

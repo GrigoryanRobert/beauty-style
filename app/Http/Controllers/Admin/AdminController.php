@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Servise;
 
 class AdminController extends Controller
 {
@@ -36,22 +37,37 @@ class AdminController extends Controller
 
     public function servicesPost(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|min:6|max:20',
-            'desc' => 'required|max:255',
-            'link' => 'required|max:20',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+//        $this->validate($request, [
+//            'name' => 'required|min:6|max:20',
+//            'desc' => 'required|max:255',
+//            'link' => 'required|max:20',
+//            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//        ]);
 
         $name = $request['name'];
         $desc= $request['desc'];
         $link = $request['link'];
 
-        $imageName = time().'.'.$request->image->getClientOriginalExtension();
+
+
+
+        $imageName = time().'.'.$request->file('image')->getClientOriginalExtension();
+
         $request->image->move(public_path('images/services/'), $imageName);
 
+        $servisaadd = new Servise();
 
+        $servisaadd->name = $name;
+        $servisaadd->image = 'images/services/'.$imageName;
+        $servisaadd->desc = $desc;
+        $servisaadd->link = $link;
+       if($servisaadd->save()){
+           return redirect()->route('admin.serviceedit');
+       }
 
+    }
 
+    public function servicesEdit(){
+        return view('admin.serviseedit');
     }
 }

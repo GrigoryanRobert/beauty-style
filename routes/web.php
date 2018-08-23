@@ -53,6 +53,8 @@ Route::prefix('admin')->group(function(){
     Route::get('/services', 'Admin\AdminController@services')->name('admin.services');
     Route::post('/service', 'Admin\AdminController@servicesPost')->name('admin.service');
 
+    Route::get('/service-edit', 'Admin\AdminController@servicesEdit')->name('admin.serviceedit');
+
 });
 
 
