@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="/adminpage/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="/adminpage/dist/css/AdminLTE.min.css">
+
+    <link rel="stylesheet" href="/adminpage/dist/css/service.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="/adminpage/dist/css/skins/_all-skins.min.css">
@@ -766,5 +768,6 @@
 <script src="/adminpage/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/adminpage/dist/js/demo.js"></script>
+<script src="/adminpage/dist/js/pages/service.js"></script>
 </body>
 </html>

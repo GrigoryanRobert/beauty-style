@@ -31,11 +31,12 @@ class AdminController extends Controller
 
     public function services()
     {
+        $servises = Servise::all();
 
-        return view('admin.servise');
+        return view('admin.servise')->with(['servises' => $servises]);
     }
 
-    public function servicesPost(Request $request)
+    public function servicesAddPost(Request $request)
     {
 //        $this->validate($request, [
 //            'name' => 'required|min:6|max:20',
@@ -62,12 +63,14 @@ class AdminController extends Controller
         $servisaadd->desc = $desc;
         $servisaadd->link = $link;
        if($servisaadd->save()){
-           return redirect()->route('admin.serviceedit');
+           return redirect()->route('admin.services');
        }
 
     }
 
-    public function servicesEdit(){
-        return view('admin.serviseedit');
+    public function servicesAdd(){
+
+        return view('admin.serviseadd');
+
     }
 }
