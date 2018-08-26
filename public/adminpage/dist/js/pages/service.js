@@ -1,6 +1,8 @@
 $(function() {
 
     var token = $('meta[name="_token"]').attr('content');
+    $.ajaxSetup({ headers: { 'csrftoken' : '{{ csrf_token() }}' } });
+
 
     $('.servise-update').click(function(){
        var serviseid = $(this).parent().closest('tr').children(':first-child').html();
@@ -8,9 +10,33 @@ $(function() {
        var servisedesc = $(this).parent().closest('tr').children(':nth-child(3)').html();
        var serviselink = $(this).parent().closest('tr').children(':nth-child(4)').html();
        var serviseimage = $(this).parent().closest('tr').children(':nth-child(5)').find("img").attr('src');
-        alert (serviseimage);
+        $.ajax({
+            type: 'post',
+            url: 'admin/service-edit',
+            data: {id: serviseid, servisename:servisename,servisedesc:servisedesc,serviselink:serviselink, serviseimage:serviseimage },
+            success: function (data) {
+                alert('ok');
 
+            }
     });
+
+
+
+       // $('#serviceid').val(serviseid);
+       //  $('#servicename').val(servisename);
+       //  $('#servicedesc').val(servisedesc);
+       //  $('#servicelink').val(serviselink);
+       //  $('#serviceimage').attr('src',serviseimage);
+    });
+
+    $('.service-image-delet').click(function(){
+        $('.service-image-hide').css('display','none');
+        $('.service-image-input').css('display','block');
+    });
+
+
+
+
     $('.language-delete').click(function(){
         var serviseid = $( this ).attr( "data-id" );
         var token = $('meta[name="_token"]').attr('content');

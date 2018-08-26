@@ -1,4 +1,12 @@
 .serviseadd{
     text-align: right;
-    margin-right: 46px;
+    margin-right: 10px;
+}
+
+.service-image-input{
+    display: none;
+}
+.servise-container{
+    width: 1120px;
+
 }

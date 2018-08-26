@@ -73,4 +73,17 @@ class AdminController extends Controller
         return view('admin.serviseadd');
 
     }
+
+
+    public function servicesEdit($id){
+        $serviceedit = new Servise();
+        $serviceedit = $serviceedit->where('id', $id)->first();
+
+        return view('admin.serviseedit')->with(['serviceedit' => $serviceedit]);
+
+    }
+
+    public function servicesEditPost(Request $request){
+
+    }
 }
