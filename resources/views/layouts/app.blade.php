@@ -72,6 +72,8 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/sourse.js') }}"></script>
 </body>
 </html>

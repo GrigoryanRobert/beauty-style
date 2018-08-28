@@ -11,6 +11,23 @@
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
+                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
+                            <label for="role" class="col-md-4 control-label">Role</label>
+
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline col-md-6" >
+                                    <input type="radio" class="form-check-input" id="materialInline1" name="role" checked="checked" value="0">
+                                    <label class="form-check-label" for="materialInline1" >Kak user</label>
+                                </div>
+
+                                <!-- Material inline 2 -->
+                                <div class="form-check form-check-inline col-md-6">
+                                    <input type="radio" class="form-check-input" id="materialInline2" name="role" value="1">
+                                    <label class="form-check-label" for="materialInline2">kak serviser</label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="name" class="col-md-4 control-label">Register With</label>
                             <div class="col-md-6">
@@ -48,22 +65,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group{{ $errors->has('role') ? ' has-error' : '' }}">
-                            <label for="role" class="col-md-4 control-label">Role</label>
 
-                            <div class="col-md-6">
-                                <select id="role" type="text" class="form-control" name="role" required>
-                                    <option value="{{0}}">User</option>
-
-                                    <option value="{{1}}">Servis user</option>
-                                </select>
-                                @if ($errors->has('role'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('role') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
@@ -95,7 +97,20 @@
                             </div>
                         </div>
                     </form>
+
+                    <div class="form-group ">
+                        <div class="col-md-6 col-md-offset-4">
+                            <p class="row--registration__agree">
+                                <span class="b-chbx-standard">
+                                    <input class="checkbox js-terms-agree" type="checkbox" id="auth-terms-agree" checked="">
+                                    <label for="auth-terms-agree">Ya saglasen</label>
+                                </span>
+                                <a class="underline" href="{{ route('pravila') }}">Pravila site</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

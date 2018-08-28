@@ -1,11 +1,16 @@
 $(document).ready(function(){
-    $("#myBtn1").click(function(){
 
-        $("#myModal1").modal();
-    });
+    //$("#myBtn2").click(function(){
+    //
+    //    $("#myModal2").modal();
+    //});
 
-    $("#myBtn2").click(function(){
+    $(location).attr('href');
 
-        $("#myModal2").modal();
-    });
+    var pathname = window.location.pathname;
+
+    if(pathname == '/register'){
+
+
+    }
 });
