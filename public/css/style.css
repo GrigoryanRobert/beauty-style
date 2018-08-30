@@ -535,7 +535,7 @@ input[type=submit]:hover {
     border-radius: 0;
 }
 button.close {
-    font-size: 1em;
+
     color:#014727;
 	outline: none;
 }
@@ -2048,7 +2048,6 @@ footer{
 
 .modal-header, h4, .close {
     background-color: #5cb85c;
-    color:white !important;
     text-align: center;
     font-size: 30px;
 }
@@ -2061,4 +2060,31 @@ footer{
 
 .userservise{
     padding: 40px 0px 100px 0px;
+}
+
+
+.profile{
+    box-shadow: 2px 1px 6px 0 rgba(0,0,0,0.95), 0 1px 6px 0 rgba(0,0,0,0.95);
+    border-radius: 6px;
+    border: 0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
+}
+
+.profileuser{
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.profile-pic{
+    padding-top: 15px;
+}
+
+.profile-pic-box{
+    position: relative;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 2em;
 }

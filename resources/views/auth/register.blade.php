@@ -105,7 +105,7 @@
                                     <input class="checkbox js-terms-agree" type="checkbox" id="auth-terms-agree" checked="">
                                     <label for="auth-terms-agree">Ya saglasen</label>
                                 </span>
-                                <a class="underline" href="{{ route('pravila') }}">Pravila site</a>
+                                <a class="underline" href="{{ url('/pravila') }}">Pravila site</a>
                             </p>
                         </div>
                     </div>

@@ -21,7 +21,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('test',function(){
         return view('test');
     });
-    Route::get('/prvila',function(){
+    Route::get('/pravila',function(){
         return view('pages.pravila');
     });
 

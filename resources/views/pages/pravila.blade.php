@@ -1,17 +1,15 @@
-@extends('layouts.layoutservise')
+@extends('layouts.app')
 
 @section('content')
 
 
-<div >
-
-    <h2 class="tittle-w3l">Oure Pravila</h2>
-
-
-
-
-
-</div>
-
+  <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">\
+        nkar
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">\
+          Forma
+      </div>
+  </div>
 
 @endsection

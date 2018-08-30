@@ -29,6 +29,7 @@
     <!-- //custom-theme files-->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <link href="{{ asset('css/style2.css') }}" rel="stylesheet" type="text/css" media="all" />
     <!-- //custom-theme files-->
     <!-- fonts -->
     <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
@@ -58,8 +59,8 @@
                         </li>
 
                         @if (Auth::guest())
-                            <a id="myBtn1" class="scroll">Login</a>
-                            <a id="myBtn2" class="scroll">Register</a>
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
