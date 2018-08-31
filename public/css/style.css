@@ -2088,3 +2088,10 @@ footer{
     right: 0;
     font-size: 2em;
 }
+
+.profile-border{
+    border:1px solid #CBCBCB;
+    background: rgba(171, 171, 171, 0.34);
+    padding-top: 40px;
+}
+

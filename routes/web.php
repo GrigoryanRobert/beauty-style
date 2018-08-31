@@ -24,6 +24,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
     Route::get('/pravila',function(){
         return view('pages.pravila');
     });
+    Route::post('/userprofile', 'Pages\UserController@userprofilePost')->name('userprofile');
 
 });
 

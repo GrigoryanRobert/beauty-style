@@ -11,9 +11,5 @@ class PravilaController extends Controller
 {
 
 
-    public function index()
-    {
-        echo 111;
 
-    }
 }
