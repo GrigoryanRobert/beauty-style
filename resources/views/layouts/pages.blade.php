@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Beauty Salon </title>
+    <!-- Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Beauty Salon Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -16,916 +18,285 @@
             window.scrollTo(0, 1);
         }
     </script>
-
-    <title>Beauty Styles</title>
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/slicebox.css') }}" />
-    <!-- for banner-->
-    <!-- font-awesome-icons -->
-    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
-    <!-- //font-awesome-icons -->
-    <!-- //custom-theme files-->
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all" />
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
-    <!-- //custom-theme files-->
-    <!-- fonts -->
-    <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&amp;subset=latin-ext,vietnamese"
-          rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
-          rel="stylesheet">
-    <!-- //fonts -->
+    <!-- //Meta Tags -->
+    <!-- Style Sheets -->
+    <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!--// Bootstrap-CSS -->
+    <link href="/css/font-awesome.css" rel="stylesheet">
+    <!--// Font-Awesome-CSS -->
+    <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" property="" />
+    <!--// Owl-Carousel-CSS -->
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Style Sheets -->
+    <!-- web-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Khula:300,400,600,700,800" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+    <!--// web-fonts -->
 </head>
+
 <body>
-<div id="app">
+<!-- banner -->
+<div class="banner jarallax" id="home">
+    <header>
+        <div class="container">
+            <div class="header-bottom-agileits">
+                <div class="w3-logo">
+                    <h1><a href="index.html">Beauty Salon</a></h1>
+                </div>
+                <div class="address">
+                    <p>4th block,New York City.</p>
+                    <p class="para-y"><a href="{{route('about')}}">Get more info</a></p>
+                </div>
+                <div class="nav-contact-w3ls ">
+                    <p>+0 111 222 333<span class="fa fa-phone" aria-hidden="true"></span></p>
+                    <p class="para-y"><a href="mailto:info@example.com">info@example.com</a><span class="fa fa-envelope-o" aria-hidden="true"></span></p>
+                </div>
+                <div class="login">
+                    @if (Auth::guest())
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        <li><a href="{{ route('register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
 
-    <!-- banner -->
-    <div class="banner-w3l" id="home">
-        <div class="header-main-agile">
-            <div class="header-right-w3l">
-                <div class="container">
-                    <ul>
-                        <li>
-                            <span class="fa fa-home" aria-hidden="true"></span> 1PO Box 8568954 Melbourne
-                        </li>
-                        <li>
-                            <span class="fa fa-envelope-o" aria-hidden="true"></span>
-                            <a href="mailto:info@example.com">info@mail.com</a>
-                        </li>
-                        <li>
-                            <span class="fa fa-phone" aria-hidden="true"></span> +0(15) 315 6666
-                        </li>
-
-                        @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+                                        Logout
+                                    </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </header>
+    <!-- navigation -->
+    <div class="nav-bg">
+        <div class="container">
+            <nav class="navbar navbar-default shift">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                            aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a class="active" href="/">Home</a></li>
+                        <li><a href="{{route('about')}}">About</a></li>
+                        <li><a href="{{route('service')}}">Services</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle effect-3" data-toggle="dropdown">Pages<b class="caret"></b></a>
+                            <ul class="dropdown-menu agile_short_dropdown">
+                                <li><a href="icons.html">Web Icons</a></li>
+                                <li><a href="typography.html">Typography</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{route('gallery')}}">Gallery</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+
+            </nav>
+        </div>
+    </div>
+    <!-- //navigation -->
+    <div class="container">
+        <!-- header -->
+        <!-- //header -->
+        <div class="agileits_w3layouts_banner_info">
+            <section class="slider">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>Experienced hair stylists </h5>
+                                <h2>Enjoy Professional Beauty Services!</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>The best and fastest service</h5>
+                                <h2>Are You Planning to Pamper Yourself?</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="banner-text-w3-agileits">
+                                <h5>Experienced hair stylists </h5>
+                                <h2>Enjoy Professional Beauty Services!</h2>
+                                <p>Providing expert skin care advice & beauty services using natural products to cater for any skin.</p>
+                                <div class="botton">
+                                    <a href="contact.html">Contact Now</a>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
-            </div>
-            <!-- navigation -->
-            <div class="nav-links">
-                <div class="container">
-                    <nav class="navbar navbar-inverse">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="index.html">
-                                <h1>
-                                    <span>Be</span>auty
-                                    <span>St</span>yle
-                                </h1>
-                            </a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav link-effect">
-                                <li class="active">
-                                    <a href="index.html">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#about" class="scroll">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#services" class="scroll">Services</a>
-                                </li>
-
-                                <li>
-                                    <a href="#news" class="scroll">News</a>
-                                </li>
-                                <li>
-                                    <a href="#team" class="scroll">Team</a>
-                                </li>
-                                <li>
-                                    <a href="#contact" class="scroll">Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-            <!-- /navigation -->
-        </div>
-        <div class="wrapper">
-            <ul id="sb-slider" class="sb-slider">
-                <li>
-                    <a href="#">
-                        <img src="images/1.jpg" alt="image1" />
-                    </a>
-                    <div class="sb-description">
-                        <h3>Be<span>au</span>ty St<span>yl</span>e</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.Lorem ipsum dolor sit amet.</p>
-                        <i></i>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/2.jpg" alt="image2" />
-                    </a>
-                    <div class="sb-description">
-                        <h3>Be<span>au</span>ty St<span>yl</span>e</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.Lorem ipsum dolor sit amet.</p>
-                        <i></i>
-                    </div>
-                </li>
-                <li>
-                    <a href="#">
-                        <img src="images/3.jpg" alt="image1" />
-                    </a>
-                    <div class="sb-description">
-                        <h3>Be<span>au</span>ty St<span>yl</span>e</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                            aliqua.Lorem ipsum dolor sit amet.</p>
-                        <i></i>
-                    </div>
-                </li>
-            </ul>
-            <div id="nav-arrows" class="nav-arrows">
-                <a href="#">Next</a>
-                <a href="#">Previous</a>
-            </div>
-
-        </div>
-        <!-- /wrapper -->
-    </div>
-    <!-- //banner -->
-
-    <!--grids -->
-    <div class="popular-wthree" id="about">
-        <div class="container">
-            <h3 class="tittle-w3l">About Us
-                <span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-            </h3>
-            <div class="col-xs-4 popular-wthree-grid">
-                <img src="images/a3.jpg" class="img-responsive" alt="" />
-                <div class="popular-wthree-text">
-                    <h5>Nail Services</h5>
-                </div>
-            </div>
-            <div class="col-xs-4 popular-wthree-grid">
-                <img src="images/a2.jpg" class="img-responsive" alt="" />
-                <div class="popular-wthree-text">
-                    <h5>Hair Styling</h5>
-                </div>
-            </div>
-            <div class="col-xs-4 popular-wthree-grid">
-                <img src="images/a1.jpg" class="img-responsive" alt="" />
-                <div class="popular-wthree-text">
-                    <h5>Makeup</h5>
-                </div>
-            </div>
-            <div class="clearfix"></div>
+            </section>
         </div>
     </div>
-    <!-- //grids -->
-    <!-- services -->
-    <div class="services-agile-w3l" id="services">
-
-        <h3 class="tittle-w3l">Oure Servises
-            <span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-        </h3>
-        <div class="services-agile-w3l-right-grids">
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-1">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-female" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Skin</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-2">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-bed" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Body</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-3">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-scissors" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Hair Cut</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-        <div class="services-agile-w3l-right-grids">
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-4">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-cubes" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Nails</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-5">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-code-fork" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Makeup</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="col-xs-4 services-agile-w3l-right-grid grid-6">
-                <div class="services-agile-w3l-icon">
-                    <span class="fa fa-external-link" aria-hidden="true"></span>
-                </div>
-                <div class="services-agile-w3l-icon-info">
-                    <h5>Wax</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed orci enim, posuere sed.</p>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
-    </div>
-    <!-- //services -->
-    <!-- pricing -->
-    <div class="pricing-agile">
-        <div class="container">
-            <h3 class="tittle-w3l">Our Pricing
-                <span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-            </h3>
-            <div class="pricing-agile-grids">
-                <div class="col-xs-4 grid-info">
-                    <h3>FAMILY PACK</h3>
-                    <h4>$29.99
-                        <sup>*</sup>
-                    </h4>
-                    <div class="pricing-agile-text">
-                        <p>Manicure & Pedicure</p>
-                        <p>Hair Styling</p>
-                        <p>Nail Cutting</p>
-                        <p>Wellness</p>
-                    </div>
-                    <a href="#register" class="scroll">Choose Plan</a>
-                </div>
-                <div class="col-xs-4 grid-info grid-two">
-                    <h3>PREMIUM</h3>
-                    <h4>$48.99
-                        <sup>*</sup>
-                    </h4>
-                    <div class="pricing-agile-text">
-                        <p>Hair Styling</p>
-                        <p>Body massage</p>
-                        <p>Wellness</p>
-                        <p>Manicure</p>
-                    </div>
-                    <a href="#register" class="scroll">Choose Plan</a>
-                </div>
-                <div class="col-xs-4 grid-info grid-three">
-                    <h3>LUXURY</h3>
-                    <h4>$76.99
-                        <sup>*</sup>
-                    </h4>
-                    <div class="pricing-agile-text">
-                        <p>Hair Cut</p>
-                        <p>Pedicure</p>
-                        <p>Body massage</p>
-                        <p>Styling</p>
-                    </div>
-                    <a href="#register" class="scroll">Choose Plan</a>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //pricing table -->
-    <div class="news-section" id="news">
-        <div class="container">
-            <h3 class="tittle-w3l">Latest News
-                <span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-            </h3>
-            <div class="news-grids-w3l">
-                <div class="col-xs-6 news-grid">
-                    <a href="#" data-toggle="modal" data-target="#myModal">
-                        <img src="images/f4.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="news-text">
-                        <div class="news-events-agile">
-                            <h5>
-                                <a href="#" data-toggle="modal" data-target="#myModal">07 Nov</a>
-                            </h5>
-                            <div class="post-img">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
-                                    <ul>
-                                        <li>
-                                            <span class="fa fa-comments" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-heart" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-share" aria-hidden="true"></span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="detail-bottom">
-                            <a href="#" data-toggle="modal" data-target="#myModal">
-                                <h6>Eiusmod tempor incididunt ut labore sed do eiusmod</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore sed do eiusmod
-                                tempor incididunt ut labore</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 news-grid">
-                    <a href="#" data-toggle="modal" data-target="#myModal">
-                        <img src="images/f6.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="news-text">
-                        <div class="news-events-agile event-colo1">
-                            <h5>
-                                <a href="#" data-toggle="modal" data-target="#myModal">16 Nov</a>
-                            </h5>
-                            <div class="post-img">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
-                                    <ul>
-                                        <li>
-                                            <span class="fa fa-comments" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-heart" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-share" aria-hidden="true"></span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="detail-bottom">
-                            <a href="#" data-toggle="modal" data-target="#myModal">
-                                <h6>Eiusmod tempor incididunt ut labore sed do eiusmod</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore sed do eiusmod
-                                tempor incididunt ut labore</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="news-grids-w3l-2">
-                <div class="col-xs-6 news-grid">
-                    <a href="#" data-toggle="modal" data-target="#myModal">
-                        <img src="images/f2.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="news-text">
-                        <div class="news-events-agile event-colo4">
-                            <h5>
-                                <a href="#" data-toggle="modal" data-target="#myModal">22 Nov</a>
-                            </h5>
-                            <div class="post-img">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
-                                    <ul>
-                                        <li>
-                                            <span class="fa fa-comments" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-heart" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-share" aria-hidden="true"></span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="detail-bottom">
-                            <a href="#" data-toggle="modal" data-target="#myModal">
-                                <h6>Eiusmod tempor incididunt ut labore sed do eiusmod</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore sed do eiusmod
-                                tempor incididunt ut labore</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-6 news-grid">
-                    <a href="#" data-toggle="modal" data-target="#myModal">
-                        <img src="images/f5.jpg" class="img-responsive" alt="" />
-                    </a>
-                    <div class="news-text">
-                        <div class="news-events-agile event-colo3">
-                            <h5>
-                                <a href="#" data-toggle="modal" data-target="#myModal">27 Nov</a>
-                            </h5>
-                            <div class="post-img">
-                                <a href="#" data-toggle="modal" data-target="#myModal">
-                                    <ul>
-                                        <li>
-                                            <span class="fa fa-comments" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-heart" aria-hidden="true"></span>
-                                        </li>
-                                        <li>
-                                            <span class="fa fa-share" aria-hidden="true"></span>
-                                        </li>
-                                    </ul>
-                                </a>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="detail-bottom">
-                            <a href="#" data-toggle="modal" data-target="#myModal">
-                                <h6>Eiusmod tempor incididunt ut labore sed do eiusmod</h6>
-                            </a>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore sed do eiusmod
-                                tempor incididunt ut labore</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal1 -->
-    <div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <section>
-                    <div class="modal-body">
-                        <h5>Beauty Style</h5>
-                        <img src="images/1.jpg" alt=" " class="img-responsive" />
-                        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-                            consequatur? Quis autem vel eum iure reprehenderit qui in ea.
-                        </p>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <!-- //Modal1 -->
-    <!-- //news -->
-    <!-- team -->
-    <div class="team-w3l" id="team">
-        <div class="container">
-            <h3 class="tittle-w3l">Our Team
-                <span class="heading-style">
-					<i></i>
-					<i></i>
-					<i></i>
-				</span>
-            </h3>
-            <div class="team-w3l-grids">
-                <div class="col-xs-3 info-team-grid-w3l">
-                    <img src="images/t1.jpg" alt="">
-                    <div class="captn">
-                        <h4>Mary</h4>
-                        <div class="media-social-agile">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-rss"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3 info-team-grid-w3l">
-                    <img src="images/t2.jpg" alt="">
-                    <div class="captn">
-                        <h4>Peter</h4>
-                        <div class="media-social-agile">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-rss"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3 info-team-grid-w3l">
-                    <img src="images/t4.jpg" alt="">
-                    <div class="captn">
-                        <h4>Johan</h4>
-                        <div class="media-social-agile">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-rss"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-3 info-team-grid-w3l">
-                    <img src="images/t3.jpg" alt="">
-                    <div class="captn">
-                        <h4>Steven</h4>
-                        <div class="media-social-agile">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-facebook"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-twitter"></span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <span class="fa fa-rss"></span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //trainers -->
-
-    <!-- contact -->
-    <div class="contact" id="contact">
-        <div class="container">
-            <div class="contact-grid-agiles-w3l">
-                <div class="col-md-7 contact-grid-agile">
-                    <h3 class="tittle-w3l">Contact Us
-                        <span class="heading-style">
-							<i></i>
-							<i></i>
-							<i></i>
-						</span>
-                    </h3>
-                    <form action="#" method="post">
-                        <input type="text" placeholder="Name" name="name" required="">
-                        <input type="email" placeholder="Email" name="email" required="">
-                        <textarea placeholder="Message.." name="message" required=""></textarea>
-                        <input type="submit" value="Send Now">
-                    </form>
-                </div>
-                <div class="col-md-5 contact-grid-agile">
-                    <div class="contact-right1">
-                        <img src="images/con-img.jpg" alt="" />
-                    </div>
-                    <div class="contact-right2">
-                        <div class="call ">
-                            <div class="col-xs-4 contact-grdr-w3l">
-                                <h3>Call us :</h3>
-                            </div>
-                            <div class="col-xs-8 contact-grdr-w3l">
-                                <ul>
-                                    <li>+3402 890 679</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="call">
-                            <div class="col-xs-4 contact-grdr-w3l">
-                                <h3>Locate us :</h3>
-                            </div>
-                            <div class="col-xs-8 contact-grdr-w3l">
-                                <ul>
-                                    <li>345 Diamond Street</li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                        <div class="call">
-                            <div class="col-xs-4 contact-grdr-w3l">
-                                <h3>Mail us :</h3>
-                            </div>
-                            <div class="col-xs-8 contact-grdr-w3l">
-                                <ul>
-                                    <li>
-                                        <a href="mailto:info@example.com">info@example.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="clearfix"> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>
-            </div>
-        </div>
-    </div>
-    <!-- //contact -->
-
-    <!-- flicker -->
-    <div class="insta-text">
-        {{--<h3>Instagram Post</h3>--}}
-    </div>
-    <div class="portfolio">
-        <ul id="flexiselDemo1">
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f6.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f3.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f4.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f5.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f6.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f2.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f4.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-            <li>
-                <div class="portfolio_grid-agile">
-                    <img src="images/f5.jpg" alt=" " class="img-responsive" />
-                </div>
-            </li>
-        </ul>
-    </div>
-    <!-- //flicker -->
-    <!-- subscribe -->
-    <div class="subscribe-info-w3l">
-        <div class="container">
-            <h4>Subscribe Our Newsletter</h4>
-            <form action="#" method="post">
-                <input type="email" name="email" placeholder="Enter your Email..." required="">
-                <input type="submit" value="Submit">
-                <div class="clearfix"> </div>
-            </form>
-        </div>
-    </div>
-    <!-- //subscribe -->
-
-
-    @yield('content')
-
-
-    <!-- footer -->
-        <footer>
-            <div class="footer-bottom-agile">
-                <div class="container">
-                    <div class="footer-bottom-agile-grids">
-                        <div class="col-md-4 footer-logo">
-                            <h2>
-                                <span>Be</span>auty
-                                <span>St</span>yle</h2>
-                            <p>Suspendisse potenti. Pellentesque pulvinar tellus at est ullamcorper, at elementum nibh laoreet. Nunc id diam in nulla
-                                sollicitudin auctor.</p>
-                            <div class="footer-social-grids-w3l">
-                                <ul>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-facebook"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-twitter"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-rss"></span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="fa fa-vk"></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="col-md-4 footer-bottom-agile-left">
-                            <h5>Our Events</h5>
-                            <div class="footer-img-grids">
-                                <div class="footer-img">
-                                    <img src="images/f4.jpg" alt="" />
-                                </div>
-                                <div class="footer-img-info">
-                                    <p>Suspese potenti. Pelleue pulvinar tellus at est.</p>
-                                    <span>20 Nov 2017</span>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                            <div class="footer-img-grids grid-foot-2">
-                                <div class="footer-img">
-                                    <img src="images/f6.jpg" alt="" />
-                                </div>
-                                <div class="footer-img-info">
-                                    <p>Suspese potenti. Pelleue pulvinar tellus at est.</p>
-                                    <span>24 Nov 2017</span>
-                                </div>
-                                <div class="clearfix"> </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mk-footer one tweet footer-bottom-agile-right">
-                            <h5>Tweets</h5>
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-twitter"></i>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accus.
-                                        <i>http//example.com</i>
-                                    </a>
-                                    <span>About 15 minutes ago
-									<span>
-									</span>
-								</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-agile">
-                <div class="container">
-                    <p>© 2018 Beauty Style. All rights reserved. </p>
-                </div>
-            </div>
-        </footer>
-        <!-- //footer -->
-
 </div>
+<!-- //banner -->
 
-<!-- Scripts -->
-<!-- js -->
-<script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<!-- for bootstrap working -->
-<script src="{{ asset('js/bootstrap.js') }}"></script>
-<!-- //for bootstrap working -->
 
-<script src="{{ asset('js/sourse.js') }}"></script>
-<!-- banner slider js -->
-<script type="text/javascript" src="{{ asset('js/modernizr.custom.46884.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.slicebox.js') }}"></script>
+<!-- Modal1 -->
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4>Beauty Salon</h4>
+                <img src="/images/11.jpg" alt=" " class="img-responsive">
+                <h5>Neque porro quisquam est qui dolorem </h5>
+                <p>Ut in ligula sollicitudin, auctor elit vel, mollis tortor. Nullam id magna in eros mollis porttitor vel et eros.Phasellus
+                    sed iaculis nibh, non suscipit tortor. Aenean ante massa, lobortis et dolor eget, sollicitudin luctus arcu. Donec eros
+                    tortor, ultrices in lectus quis, aliquet commodo lectus.Donec eros tortor, ultrices in lectus quis, aliquet commodo
+                    lectus.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Modal1 -->
+
+
+@yield('content')
+
+
+<!-- footer -->
+<div class="footer">
+    <div class="container">
+        <div class="f-bg-w3l">
+            <div class="col-md-4 w3layouts_footer_grid">
+                <h2>Contact <span>Information</span></h2>
+                <ul class="con_inner_text">
+                    <li><span class="fa fa-map-marker" aria-hidden="true"></span>1234k Avenue, 4th block, <label> New York City.</label></li>
+                    <li><span class="fa fa-envelope-o" aria-hidden="true"></span> <a href="mailto:info@example.com">info@example.com</a></li>
+                    <li><span class="fa fa-phone" aria-hidden="true"></span> +1234 567 567</li>
+                </ul>
+
+                <ul class="social_agileinfo">
+                    <li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 w3layouts_footer_grid">
+                <h2>Subscribe <span>Newsletter</span></h2>
+                <p>By subscribing to our mailing list you will always get latest news from us.</p>
+                <form action="#" method="post">
+                    <input type="email" name="Email" placeholder="Enter your email..." required="">
+                    <button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
+                    <div class="clearfix"> </div>
+                </form>
+            </div>
+            <div class="col-md-4 w3layouts_footer_grid">
+                <h3>Recent <span>Works</span></h3>
+                <ul class="con_inner_text midimg">
+                    <li><a href="#"><img src="/images/p2.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p3.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p4.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p5.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p6.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p7.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p8.jpg" alt="" class="img-responsive" /></a></li>
+                    <li><a href="#"><img src="/images/p9.jpg" alt="" class="img-responsive" /></a></li>
+                </ul>
+
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <p class="copyright">© 2017 Beauty Salon. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+</div>
+<!-- //footer -->
+
+<a href="#home" class="scroll" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+<!-- //smooth scrolling -->
+<script type='text/javascript' src='/js/jquery-2.2.3.min.js'></script>
+<!-- start-smoth-scrolling -->
+<script src="/js/jarallax.js"></script>
 <script type="text/javascript">
-    $(function () {
-
-        var Page = (function () {
-
-            var $navArrows = $('#nav-arrows').hide(),
-                $shadow = $('#shadow').hide(),
-                slicebox = $('#sb-slider').slicebox({
-                    onReady: function () {
-
-                        $navArrows.show();
-                        $shadow.show();
-
-                    },
-                    orientation: 'r',
-                    cuboidsRandom: true
-                }),
-
-                init = function () {
-
-                    initEvents();
-
-                },
-                initEvents = function () {
-
-                    // add navigation events
-                    $navArrows.children(':first').on('click', function () {
-
-                        slicebox.next();
-                        return false;
-
-                    });
-
-                    $navArrows.children(':last').on('click', function () {
-
-                        slicebox.previous();
-                        return false;
-
-                    });
-
-                };
-
-            return {
-                init: init
-            };
-
-        })();
-
-        Page.init();
-
+    /* init Jarallax */
+    $('.jarallax').jarallax({
+        speed: 0.5,
+        imgWidth: 1366,
+        imgHeight: 768
+    })
+</script>
+<!-- flexSlider -->
+<script defer src="/js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+    $(window).load(function(){
+        $('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider){
+                $('body').removeClass('loading');
+            }
+        });
     });
 </script>
-<!-- //banner slider js -->
+<!-- //flexSlider -->
 
-<!-- //here starts scrolling icon -->
-<script type="text/javascript" src="{{ asset('js/SmoothScroll.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/easing.js') }}"></script>
-<!-- here stars scrolling script -->
+<!-- Owl-Carousel-JavaScript -->
+<script src="/js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+            items: 2,
+            lazyLoad: true,
+            autoPlay: false,
+            pagination: true,
+        });
+    });
+</script>
+<!-- //Owl-Carousel-JavaScript -->
+<script type="text/javascript" src="/js/move-top.js"></script>
+<script type="text/javascript" src="/js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+    });
+</script>
+<!-- start-smoth-scrolling -->
+<!-- here stars scrolling icon -->
 <script type="text/javascript">
     $(document).ready(function () {
         /*
@@ -943,70 +314,18 @@
 
     });
 </script>
-<!-- //here ends scrolling script -->
 <!-- //here ends scrolling icon -->
 
-<!-- scrolling script -->
-<script type="text/javascript">
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
-            event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 1000);
-        });
-    });
-</script>
-<!-- //scrolling script -->
-<!-- flexisel -->
-<script type="text/javascript" src="{{ asset('js/jquery.flexisel.js') }}"></script>
-<script type="text/javascript">
-    $(window).load(function () {
-        $("#flexiselDemo1").flexisel({
-            visibleItems: 4,
-            animationSpeed: 1000,
-            autoPlay: true,
-            autoPlaySpeed: 3000,
-            pauseOnHover: true,
-            enableResponsiveBreakpoints: true,
-            responsiveBreakpoints: {
-                portrait: {
-                    changePoint: 480,
-                    visibleItems: 1
-                },
-                landscape: {
-                    changePoint: 640,
-                    visibleItems: 2
-                },
-                tablet: {
-                    changePoint: 768,
-                    visibleItems: 3
-                }
-            }
-        });
-
-    });
-</script>
-<!-- //flexisel -->
-<!-- password-script -->
+<!-- stats -->
+<script src="/js/jquery.waypoints.min.js"></script>
+<script src="/js/jquery.countup.js"></script>
 <script>
-    window.onload = function () {
-        document.getElementById("password1").onchange = validatePassword;
-        document.getElementById("password2").onchange = validatePassword;
-    }
-
-    function validatePassword() {
-        var pass2 = document.getElementById("password2").value;
-        var pass1 = document.getElementById("password1").value;
-        if (pass1 != pass2)
-            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("password2").setCustomValidity('');
-        //empty string means no validation error
-    }
+    $('.counter').countUp();
 </script>
-<!-- //password-script -->
+<!-- //stats -->
 
-
+<!--js for bootstrap working-->
+<script src="/js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
 </body>
 </html>

@@ -14,9 +14,12 @@
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
     /** ADD ALL LOCALIZED ROUTES INSIDE THIS GROUP **/
-    Route::get('/', function () {
-        return view('layouts.pages');
-    });
+    Route::get('/', 'Pages\HomeController@index')->name('home');
+    Route::get('/about', 'Pages\HomeController@about')->name('about');
+    Route::get('/service', 'Pages\HomeController@service')->name('service');
+    Route::get('/gallery', 'Pages\HomeController@gallery')->name('gallery');
+    Route::get('/contact', 'Pages\HomeController@contact')->name('contact');
+
 
     Route::get('test',function(){
         return view('test');

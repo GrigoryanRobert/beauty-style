@@ -23,8 +23,9 @@
             <div class="container">
                 <div class="row d-flex align-items-center">
                     <div class="col-md-6 d-md-block d-none">
-                        <span>Be</span>auty
-                        <span>St</span>yle
+                        <div class="w3-logo">
+                            <h1><a href="/">Beauty Style</a></h1>
+                        </div>
                     </div>
 
                     <div class="col-md-6 d-md-block d-none" id="app-navbar-collapse">
@@ -34,7 +35,7 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="nav navbar-nav navbar-right">
+                        <ul class="nav navbar-nav navbar-right userlogin">
                             <!-- Authentication Links -->
                             @if (Auth::guest())
                                 <li><a href="{{ route('login') }}">Login</a></li>
