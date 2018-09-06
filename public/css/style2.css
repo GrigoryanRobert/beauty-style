@@ -39,6 +39,7 @@
 .top-bar{
     background-color: #ffffff;
     margin-bottom: 60px;
+    opacity: 0.7;
 }
 
 
@@ -54,6 +55,17 @@
     color: #3E0D1B;
 }
 
+#app{
+background-image: url(../images/22.jpg);
+}
+
+.register{
+    opacity: 0.7
+}
+
+.js-terms-agree{
+    float:left;
+}
 
 
 

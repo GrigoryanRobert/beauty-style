@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container register">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -89,6 +89,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group ">
+                            <div class="col-md-6 col-md-offset-4">
+                                <p class="row--registration__agree">
+                                <span class="b-chbx-standard">
+                                    <input class="checkbox js-terms-agree" type="checkbox" id="auth-terms-agree" checked="">
+                                    <label for="auth-terms-agree">Ya saglasen</label>
+                                </span>
+                                    <a class="underline" href="{{ url('/pravila') }}">Pravila site</a>
+                                </p>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -96,19 +108,10 @@
                                 </button>
                             </div>
                         </div>
+
                     </form>
 
-                    <div class="form-group ">
-                        <div class="col-md-6 col-md-offset-4">
-                            <p class="row--registration__agree">
-                                <span class="b-chbx-standard">
-                                    <input class="checkbox js-terms-agree" type="checkbox" id="auth-terms-agree" checked="">
-                                    <label for="auth-terms-agree">Ya saglasen</label>
-                                </span>
-                                <a class="underline" href="{{ url('/pravila') }}">Pravila site</a>
-                            </p>
-                        </div>
-                    </div>
+
                 </div>
 
             </div>

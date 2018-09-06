@@ -17,7 +17,7 @@
 
 </head>
 <body>
-    <div >
+    <div id="app">
 
         <div class="top-bar">
             <div class="container">
