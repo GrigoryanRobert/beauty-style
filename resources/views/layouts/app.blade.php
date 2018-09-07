@@ -22,7 +22,7 @@
         <div class="top-bar">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-md-6 d-md-block d-none">
+                    <div class="col-md-6 col-sm-6 d-md-block d-none">
                         <div class="w3-logo">
                             <h1><a href="/">Beauty Style</a></h1>
                         </div>
