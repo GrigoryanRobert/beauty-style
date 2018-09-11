@@ -23,9 +23,13 @@
     position: relative;
 }
 
+.profile-pic-box img{
+    width: 160px;
+}
+
 .close{
     position: absolute;
-    top: 0;
+    top: -10px;
     right: 0;
     font-size: 2em;
 }
@@ -65,6 +69,29 @@ background-image: url(../images/22.jpg);
 
 .js-terms-agree{
     float:left;
+}
+
+.image-upload{
+    display: none;
+}
+
+.relative{
+    position: relative;
+
+}
+
+.input-icon{
+    position: absolute;
+    left: 5px;
+    top:9px;
+    font-size: 16px;
+}
+.input-with-icon{
+    padding-left: 25px;
+}
+
+.profile-form{
+    padding-top: 13px;
 }
 
 

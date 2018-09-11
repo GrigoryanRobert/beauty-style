@@ -28,6 +28,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="/css/flexslider.css" type="text/css" media="screen" property="" />
     <!--// Owl-Carousel-CSS -->
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/style2.css" rel="stylesheet" type="text/css" media="all" />
     <!-- //Style Sheets -->
     <!-- web-fonts -->
     <link href="//fonts.googleapis.com/css?family=Khula:300,400,600,700,800" rel="stylesheet">
