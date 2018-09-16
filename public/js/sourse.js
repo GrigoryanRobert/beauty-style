@@ -1,16 +1,20 @@
 $(document).ready(function(){
 
-    //$("#myBtn2").click(function(){
-    //
-    //    $("#myModal2").modal();
-    //});
 
-    $(location).attr('href');
+    var height = $(window).height();
+    console.log(height);
 
-    var pathname = window.location.pathname;
+    $('#app').css({
+        'height': height
+    });
 
-    if(pathname == '/register'){
+    $( window ).resize(function() {
+         height = $(window).height();
+        console.log(height);
+        $('#app').css({
+            'height': height
+        });
+    });
 
 
-    }
 });

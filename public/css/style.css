@@ -2397,10 +2397,7 @@ label.header {
     float: left;
     margin-bottom: 8px;
 }
-.form-control {
-    border: none;
-    box-shadow: none;
-}
+
 h3.connect {
     margin-top: 43px;
 }

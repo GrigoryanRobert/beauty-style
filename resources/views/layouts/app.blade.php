@@ -10,19 +10,21 @@
     <title>Beuty Style</title>
     <!-- Styles -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/style2.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap-social.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/registerstyle.css') }}" rel="stylesheet">
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body >
+
     <div >
 
         <div class="top-bar">
             <div class="container">
                 <div class="row d-flex align-items-center">
-                    <div class="col-md-6 d-md-block d-none">
+                    <div class="col-md-6 col-sm-6 d-md-block d-none">
                         <div class="w3-logo">
                             <h1><a href="/">Beauty Style</a></h1>
                         </div>
