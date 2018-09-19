@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// Owl-Carousel-CSS -->
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/style2.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/css/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" media="all" />
     <!-- //Style Sheets -->
     <!-- web-fonts -->
     <link href="//fonts.googleapis.com/css?family=Khula:300,400,600,700,800" rel="stylesheet">
@@ -240,7 +241,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clearfix"> </div>
         </div>
     </div>
-    <p class="copyright">© 2017 Beauty Salon. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
+    <p class="copyright">© 2017 Beauty Salon. All Rights Reserved. </p>
 </div>
 <!-- //footer -->
 
