@@ -64,7 +64,33 @@ Route::prefix('admin')->group(function(){
     Route::get('/service-edit/{id}', 'Admin\AdminController@servicesEdit')->name('admin.serviceedit');
     Route::post('/service-edit', 'Admin\AdminController@servicesEditPost')->name('admin.serviceedit');
 
-   // Route::get('/service-listt', 'Admin\AdminController@services')->name('admin.servicelist');
+
+    Route::get('/languages', 'Admin\LanguagesController@index');
+    Route::get('/add_languages', 'Admin\LanguagesController@add_languages');
+    Route::post('/add_languages', 'Admin\LanguagesController@addLanguagePost');
+    Route::get('/edit_languages/{id}', 'Admin\LanguagesController@editLanguage');
+    Route::post('/edit_languages/{id}', 'Admin\LanguagesController@editLanguagePost');
+    Route::post('/delete_languages', 'Admin\LanguagesController@deleteLanguagePost');
+
+    Route::get('/menu', 'Admin\MenuController@index');
+    Route::get('/add_menu', 'Admin\MenuController@add_menu');
+    Route::post('/add_menu', 'Admin\MenuController@add_menu_post');
+    Route::get('/edit_menu/{id}', 'Admin\MenuController@edit_menu');
+    Route::post('/edit_menu/{id}', 'Admin\MenuController@edit_menu_post');
+
+
+    Route::get('/translate_menu', 'Admin\Menu_translateController@index');
+    Route::post('/translate_menu', 'Admin\Menu_translateController@translate_post');
+
+    Route::get('/category', 'Admin\AdminCategoryController@index')->name('admin.category') ;
+    Route::get('/add_category', 'Admin\AdminCategoryController@add_menu');
+    Route::post('/add_category', 'Admin\AdminCategoryController@add_menu_post');
+    Route::get('/edit_category/{id}', 'Admin\AdminCategoryController@edit_menu');
+    Route::post('/edit_category/{id}', 'Admin\AdminCategoryController@edit_menu_post');
+
+
+
+    // Route::get('/service-listt', 'Admin\AdminController@services')->name('admin.servicelist');
 
 });
 

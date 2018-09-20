@@ -33,7 +33,7 @@ class AdminController extends Controller
     {
         $servises = Servise::all();
 
-        return view('admin.servise')->with(['servises' => $servises]);
+        return view('admin.service.servise')->with(['servises' => $servises]);
     }
 
     public function servicesAddPost(Request $request)
@@ -70,7 +70,7 @@ class AdminController extends Controller
 
     public function servicesAdd(){
 
-        return view('admin.serviseadd');
+        return view('admin.service.serviseadd');
 
     }
 
@@ -79,7 +79,7 @@ class AdminController extends Controller
         $serviceedit = new Servise();
         $serviceedit = $serviceedit->where('id', $id)->first();
 
-        return view('admin.serviseedit')->with(['serviceedit' => $serviceedit]);
+        return view('admin.service.serviseedit')->with(['serviceedit' => $serviceedit]);
 
     }
 
