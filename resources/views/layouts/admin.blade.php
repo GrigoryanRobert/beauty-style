@@ -368,6 +368,28 @@
                     </a>
                 </li>
 
+                <li>
+                    <a href="{{ route('admin.category')}}">
+                        <i class="fa fa-th"></i> <span>Category</span>
+
+                    </a>
+                </li>
+
+
+                <li class="treeview">
+                    <a href="{{ url('admin/languages') }}">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>Languages</span>
+                    </a>
+                </li>
+
+                <li class="treeview">
+                    <a href="{{ url('admin/menu') }}">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>Menu</span>
+                    </a>
+                </li>
+
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-pie-chart"></i>

@@ -29,6 +29,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--// Owl-Carousel-CSS -->
     <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="/css/style2.css" rel="stylesheet" type="text/css" media="all" />
+
+    <link href="/css/awesome-bootstrap-checkbox.css" rel="stylesheet" type="text/css" media="all" />
+
     <!-- //Style Sheets -->
     <!-- web-fonts -->
     <link href="//fonts.googleapis.com/css?family=Khula:300,400,600,700,800" rel="stylesheet">
@@ -258,7 +261,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     })
 </script>
 <!-- flexSlider -->
-<script defer src="/js/jquery.flexslider.js"></script>
+<script  src="/js/jquery.flexslider.js"></script>
 <script type="text/javascript">
     $(window).load(function(){
         $('.flexslider').flexslider({
@@ -328,5 +331,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!--js for bootstrap working-->
 <script src="/js/bootstrap.js"></script>
 <!-- //for bootstrap working -->
+
+<!--js for page-->
+<script src="/js/sourse.js"></script>
+<!-- //for page working -->
 </body>
 </html>
