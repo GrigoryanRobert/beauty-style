@@ -120,100 +120,156 @@
                             </div>
                             <div class="col-sm-12 col-xs-12">
 
-                                <form class="form-horizontal">
-                                    <div class="table-responsive">
-                                        <table class="table table-bordered table-striped table-highlight">
-                                            <thead>
-                                            <th>Имя услуги</th>
-                                            <th>Длительность</th>
-
-                                            <th>Плата за услугу</th>
-
-                                            <th>Транспортная Плата</th>
 
 
-                                            </thead>
-                                            <tbody>
-                                            <tr>
-                                                <td colspan="4">Женская Стрижка</td>
-                                            </tr>
 
-                                                <tr>
-                                                    <td>Стрижка (короткие волосы - до линии плеча)</td>
-                                                    <td><input type="text" class="form-control" value="" /></td>
-                                                    <td><input type="text" class="form-control" value="" /></td>
-                                                    <td><input type="text" class="form-control" value="" /></td>
 
-                                                </tr>
-                                            <tr>
-                                                <td>Стрижка (длинные волосы - длиннее линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>Креативная стрижка (короткие волосы - до линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>Креативная стрижка (длинные волосы - длиннее линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td>Стрижка/подравнивание челки</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-
-                                            <tr>
-                                                <td colspan="4">Укладка Женских Волос</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Кератиновое выпрямление волос (длинные волосы - длиннее линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Кератиновое выпрямление волос (короткие волосы - до линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Укладка (короткие волосы - до линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td>Укладка (длинные волосы - длиннее линии плеча)</td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-                                                <td><input type="text" class="form-control" value="" /></td>
-
-                                            </tr>
-
-                                            </tbody>
-                                        </table>
+                                <div class="table" id="results">
+                                    <div class='theader'>
+                                        <div class='table_header'>Имя услуги</div>
+                                        <div class='table_header'>Длительность</div>
+                                        <div class='table_header'>Плата за услугу</div>
+                                        <div class='table_header'>Транспортная Плата</div>
                                     </div>
-                                </form>
+                                    <div class='table_row'>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Имя услуги</div>
+                                            <div class='table_cell'>Стрижка (короткие волосы - до линии плеча)</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Длительность</div>
+                                            <div class='table_cell'><input type="text" class="form-control" value="" /></div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Плата за услугу</div>
+                                            <div class='table_cell'><input type="text" class="form-control" value="" /></div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Транспортная Плата</div>
+                                            <div class='table_cell'><input type="text" class="form-control" value="" /></div>
+                                        </div>
+                                    </div>
+                                    <div class='table_row'>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header One</div>
+                                            <div class='table_cell'>-0.89</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Two</div>
+                                            <div class='table_cell'>0.7986</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Three</div>
+                                            <div class='table_cell'>0.876</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Four</div>
+                                            <div class='table_cell'>0.498</div>
+                                        </div>
+                                    </div>
+                                    <div class='table_row'>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header One</div>
+                                            <div class='table_cell'>-1.1669</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Two</div>
+                                            <div class='table_cell'>0.4949</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Three</div>
+                                            <div class='table_cell'>-0.7113</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Four</div>
+                                            <div class='table_cell'>0.434</div>
+                                        </div>
+                                    </div>
+                                    <div class='table_row'>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header One</div>
+                                            <div class='table_cell'>0.1996</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Two</div>
+                                            <div class='table_cell'>-0.7693</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Three</div>
+                                            <div class='table_cell'>1.974</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Four</div>
+                                            <div class='table_cell'>-0.959</div>
+                                        </div>
+                                    </div>
+                                    <div class='table_row'>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header One</div>
+                                            <div class='table_cell'>-1.5998</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Two</div>
+                                            <div class='table_cell'>-0.1149</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Three</div>
+                                            <div class='table_cell'>1.3888</div>
+                                        </div>
+                                        <div class='table_small'>
+                                            <div class='table_cell'>Header Four</div>
+                                            <div class='table_cell'>-0.0689</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="divTable blueTable">
+                                    <div class="divTableHeading">
+                                        <div class="divTableRow">
+                                            <div class="divTableHead">Имя услуги</div>
+                                            <div class="divTableHead">Длительность</div>
+                                            <div class="divTableHead">Плата за услугу</div>
+                                            <div class="divTableHead">Транспортная Плата</div>
+                                        </div>
+                                    </div>
+                                    <div class="divTableBody ">
+                                        <div class="divTableRow">
+                                            Женская Стрижка
+                                        </div>
+
+                                        <div class="divTableRow">
+                                            <div class="divTableCell">Стрижка (короткие волосы - до линии плеча)</div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                        </div>
+
+                                        <div class="divTableRow">
+                                            <div class="divTableCell">Стрижка (короткие волосы - до линии плеча)</div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                        </div>
+
+                                        <div class="divTableRow">
+                                            <div class="divTableCell">Стрижка (короткие волосы - до линии плеча)</div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                        </div>
+
+                                        <div class="divTableRow">
+                                            <div class="divTableCell">Стрижка (короткие волосы - до линии плеча)</div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                            <div class="divTableCell"><input type="text" class="form-control" value="" /></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
 
                             </div>
                         </div>

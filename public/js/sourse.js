@@ -22,6 +22,7 @@ $(document).ready(function(){
         if ($this.is(':checked')) {
             // the checkbox was checked
             alert( this.value );
+            $('.parekmaxer').css('display','block')
 
         } else {
             // the checkbox was unchecked
